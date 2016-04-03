@@ -1,3 +1,8 @@
 # Files to not push via git
 lib
 node_modules
+tmp
+dist*/
+
+# editor dump
+/.idea/*

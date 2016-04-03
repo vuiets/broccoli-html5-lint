@@ -1,32 +1,37 @@
 {
-  "name": "broccoli-editorconfig",
-  "version": "0.1.0",
-  "description": "Code formatter for broccoli with editorconfig.",
-  "main": "index.js",
-  "scripts": {
-    "compile": "babel -d lib/ index.js",
-    "prepublish": "npm run compile"
-  },
-  "repository": {
-   "type": "git",
-   "url": "https://github.com/wizvishak/broccoli-editorconfig"
-  },
-  "keywords": [
-    "broccoli-plugin"
-  ],
-  "author": {
-    "name": "Visahavel Parthasarathy",
-    "url": "https://github.com/wizvishak"
-  },
-  "readmeFilename": "README.md",
-  "license": "MIT",
-  "dependencies": {
-    "broccoli-filter": "^1.2.3",
-    "editorconfig": "^0.13.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-preset-es2015": "^6.5.0",
-    "broccoli": "^0.16.9"
-  }
+	"name": "broccoli-html5-lint",
+	"version": "0.1.0",
+	"description": "Run HTML5 lint on broccoli nodes.",
+	"main": "index.js",
+	"scripts": {
+		"compile": "babel -d lib/ index.js",
+		"test": "broccoli build dist",
+		"prepublish": "npm run compile"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wizvishak/broccoli-html5-lint"
+	},
+	"keywords": [
+		"broccoli-plugin"
+	],
+	"author": {
+		"name": "Visahavel Parthasarathy",
+		"url": "https://github.com/wizvishak"
+	},
+	"readmeFilename": "README.md",
+	"license": "MIT",
+	"dependencies": {
+		"broccoli-persistent-filter": "^1.2.8",
+		"chalk": "^1.1.3",
+		"html5-lint": "^0.2.5",
+		"rsvp": "^3.2.1",
+		"text-table": "^0.2.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.5.1",
+		"babel-preset-es2015": "^6.5.0",
+		"broccoli": "^0.16.9",
+		"broccoli-merge-trees": "^1.1.1"
+	}
 }
