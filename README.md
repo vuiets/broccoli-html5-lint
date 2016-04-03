@@ -1,6 +1,6 @@
 # broccoli-html5-lint
 
-Run [HTML5 lint](https://github.com/mozilla/html5-lint) on [broccoli](https://github.com/joliss/broccoli) nodes.
+:fallen_leaf: Run [HTML5 lint](https://github.com/mozilla/html5-lint) on [broccoli](https://github.com/joliss/broccoli) nodes.
 
 ## Installation
 
