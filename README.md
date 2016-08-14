@@ -2,7 +2,7 @@
 
 :fallen_leaf: Run [HTML5 lint](https://github.com/mozilla/html5-lint) on [broccoli](https://github.com/joliss/broccoli) nodes.
 
-## Installation
+### Install
 
 Install with [npm](https://github.com/npm/npm#npm1----node-package-manager). (Make sure you have installed [Node](http://nodejs.org/).)
 
@@ -10,12 +10,15 @@ Install with [npm](https://github.com/npm/npm#npm1----node-package-manager). (Ma
 npm install --save-dev broccoli-html5-lint
 ```
 
-## Usage
+### Usage
 
 ```javascript
 var HTML5Lint = require('broccoli-html5-lint');
 node = new HTML5Lint(inputNodes, options);
 ```
 
-## License
+### Inspiration
+- Reporter: [@sindresorhus](https://github.com/sindresorhus)'s [stylish](https://github.com/eslint/eslint/blob/master/tests/lib/formatters/stylish.js) formatter for [eslint](https://github.com/eslint/eslint)
+
+### License
 MIT

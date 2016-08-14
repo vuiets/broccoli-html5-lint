@@ -1,11 +1,7 @@
-'use strict';
+var esTranspiler = require('broccoli-babel-transpiler');
 
-var HTML5Lint = require('./lib');
-var mergeTrees = require('broccoli-merge-trees');
-
-var noOption = new HTML5Lint('tests/fixtures', {
-	srcDir: '/',
-	files: ['index.html']
+var scriptTree = esTranspiler('src', {
+	filterExtensions:['js', 'es6']
 });
 
-module.exports = noOption;
+module.exports = scriptTree;
