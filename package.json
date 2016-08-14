@@ -2,10 +2,13 @@
 	"name": "broccoli-html5-lint",
 	"version": "0.1.0",
 	"description": "Run HTML5 lint on broccoli nodes.",
-	"main": "index.js",
+	"main": "lib/index.js",
+	"files": [
+		"lib"
+	],
 	"scripts": {
-		"compile": "babel -d lib/ index.js",
-		"test": "broccoli build dist",
+		"compile": "broccoli build lib",
+		"test": "cd tests/ && broccoli build dist",
 		"prepublish": "npm run compile"
 	},
 	"repository": {
@@ -29,9 +32,8 @@
 		"text-table": "^0.2.0"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.5.1",
-		"babel-preset-es2015": "^6.5.0",
 		"broccoli": "^0.16.9",
+		"broccoli-babel-transpiler": "^5.6.0",
 		"broccoli-merge-trees": "^1.1.1"
 	}
 }

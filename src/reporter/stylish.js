@@ -1,18 +1,11 @@
-'use strict';
-
-const Filter = require('broccoli-persistent-filter'),
-	html5Lint = require('html5-lint'),
-	Promise = require('rsvp').Promise;
+import chalk from 'chalk';
+import table from 'text-table';
 
 function pluralize(word, count) {
 	return (count === 1 ? word : `${word}s`);
 }
 
 function formatOp(filePath, messages) {
-	// lazy load output format helper libs
-	const chalk = require('chalk'),
-		table = require('text-table');
-
 	let output = '\n',
 		infos = 0,
 		warnings = 0,
@@ -75,38 +68,4 @@ function formatOp(filePath, messages) {
 	console.log(output);
 }
 
-function HTML5Lint(inputNode, options) {
-	if (!(this instanceof HTML5Lint)) return new HTML5Lint(inputNode, options);
-
-	Filter.call(this, inputNode, options);
-
-	this.options = options;
-}
-
-HTML5Lint.prototype = Object.create(Filter.prototype);
-HTML5Lint.prototype.constructor = HTML5Lint;
-
-HTML5Lint.prototype.processString = function (content, relativePath) {
-	const promise = new Promise((resolve, reject) => {
-		html5Lint(content, (err, results) => {
-			if (err) reject(err);
-
-			if (results.messages) {
-				formatOp(relativePath, results.messages);
-			}
-
-			resolve(content);
-		});
-
-	});
-
-	return promise.then((content) => {
-		return content;
-	}).catch((error) => {
-		throw error;
-	});
-};
-
-HTML5Lint.prototype.extensions = ['html'];
-
-module.exports = HTML5Lint;
+module.exports = formatOp;
